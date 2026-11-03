@@ -1,0 +1,67 @@
+.page {
+  min-height: 100vh;
+  padding: 48rpx 32rpx;
+  box-sizing: border-box;
+}
+
+.hero {
+  text-align: center;
+  margin: 48rpx 0 64rpx;
+}
+
+.hero-title {
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #4f7cff;
+}
+
+.hero-sub {
+  margin-top: 16rpx;
+  font-size: 30rpx;
+  color: #888;
+}
+
+.role-row {
+  display: flex;
+  gap: 24rpx;
+}
+
+.role-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 48rpx 24rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
+}
+
+.role-emoji {
+  font-size: 80rpx;
+}
+
+.role-name {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.role-desc {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.tip {
+  margin-top: 48rpx;
+  padding: 20rpx;
+  font-size: 22rpx;
+  color: #2f9e44;
+  background: #eefaf0;
+  border-radius: 12rpx;
+  word-break: break-all;
+}
+
+.tip-error {
+  color: #e03131;
+  background: #fff0f0;
+}

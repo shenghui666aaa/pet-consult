@@ -1,0 +1,43 @@
+<view class="page">
+  <view class="form-item photo-item" bindtap="choosePhoto">
+    <image wx:if="{{form.photo}}" class="photo" src="{{photoUrl}}" mode="aspectFill" />
+    <view wx:else class="photo photo-empty">＋</view>
+    <view class="photo-tip">点击上传宠物照片</view>
+  </view>
+
+  <view class="form-item">
+    <view class="label">名字 *</view>
+    <input class="input" value="{{form.name}}" bindinput="onInput" data-key="name" placeholder="如：豆豆" />
+  </view>
+
+  <view class="form-item">
+    <view class="label">物种</view>
+    <picker range="{{speciesOptions}}" bindchange="onSpecies">
+      <view class="picker">{{form.species || '请选择'}}</view>
+    </picker>
+  </view>
+
+  <view class="form-item">
+    <view class="label">品种</view>
+    <input class="input" value="{{form.breed}}" bindinput="onInput" data-key="breed" placeholder="如：金毛、英短" />
+  </view>
+
+  <view class="form-item">
+    <view class="label">性别</view>
+    <picker range="{{genderOptions}}" bindchange="onGender">
+      <view class="picker">{{form.gender || '请选择'}}</view>
+    </picker>
+  </view>
+
+  <view class="form-item">
+    <view class="label">年龄（月）</view>
+    <input class="input" type="number" value="{{form.age}}" bindinput="onInput" data-key="age" placeholder="如：12" />
+  </view>
+
+  <view class="form-item">
+    <view class="label">体重（kg）</view>
+    <input class="input" value="{{form.weight}}" bindinput="onInput" data-key="weight" placeholder="如：5.5" />
+  </view>
+
+  <button class="btn-primary save" bindtap="save" disabled="{{saving}}">保存</button>
+</view>

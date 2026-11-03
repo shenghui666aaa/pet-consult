@@ -1,0 +1,15 @@
+<view class="page">
+  <view wx:if="{{!loading && list.length === 0}}" class="empty">
+    <view class="empty-emoji">💬</view>
+    <view>还没有问诊记录</view>
+  </view>
+
+  <view class="consult-card" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="goChat">
+    <view class="row">
+      <view class="pet-name">{{item.pet.name || '宠物'}}</view>
+      <view class="status status-{{item.status}}">{{item.statusText}}</view>
+    </view>
+    <view class="symptom">{{item.symptom}}</view>
+    <view class="time">{{item.created_at}}</view>
+  </view>
+</view>

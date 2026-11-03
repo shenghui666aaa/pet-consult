@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pets/pets",
+    "pages/pet-edit/pet-edit",
+    "pages/consult-create/consult-create",
+    "pages/consult-list/consult-list",
+    "pages/chat/chat",
+    "pages/doctor/doctor",
+    "pages/consult-result/consult-result"
+  ],
+  "window": {
+    "backgroundColor": "#f7f8fa",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4f7cff",
+    "navigationBarTitleText": "爱宠分诊",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

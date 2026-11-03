@@ -1,0 +1,25 @@
+<view class="page">
+  <view class="header">
+    <view class="title">我的宠物</view>
+  </view>
+
+  <view wx:if="{{!loading && pets.length === 0}}" class="empty">
+    <view class="empty-emoji">🐾</view>
+    <view>还没有宠物档案，先添加一只吧</view>
+  </view>
+
+  <view class="pet-card" wx:for="{{pets}}" wx:key="id" data-id="{{item.id}}" bindtap="editPet">
+    <image wx:if="{{item.photo}}" class="pet-photo" src="{{item.photoUrl}}" mode="aspectFill" />
+    <view wx:else class="pet-photo pet-photo-empty">🐕</view>
+    <view class="pet-info">
+      <view class="pet-name">{{item.name}}</view>
+      <view class="pet-meta">{{item.species}} · {{item.breed}} · {{item.age}}个月</view>
+    </view>
+    <view class="pet-arrow">›</view>
+  </view>
+
+  <view class="footer">
+    <button class="btn-primary" bindtap="addPet">新增宠物</button>
+    <button class="btn-ghost" bindtap="goConsult" disabled="{{pets.length === 0}}">发起问诊</button>
+  </view>
+</view>

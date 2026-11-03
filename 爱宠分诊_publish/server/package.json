@@ -1,0 +1,15 @@
+{
+  "name": "pet-consult-server",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-sqlite --env-file=.env index.js",
+    "dev": "node --experimental-sqlite --watch --env-file=.env index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.5.0"
+  }
+}

@@ -1,0 +1,28 @@
+<view class="page">
+  <view class="form-item">
+    <view class="label">选择宠物 *</view>
+    <picker range="{{petNames}}" bindchange="onPetChange">
+      <view class="picker {{selectedPetName ? '' : 'placeholder'}}">{{selectedPetName || '请选择宠物'}}</view>
+    </picker>
+  </view>
+
+  <view class="form-item">
+    <view class="label">症状描述 *</view>
+  </view>
+  <view class="card">
+    <textarea class="textarea" value="{{symptom}}" bindinput="onSymptom" placeholder="请描述症状、持续时间、饮食和精神状态等" maxlength="500" />
+  </view>
+
+  <view class="form-item">
+    <view class="label">上传图片（最多6张）</view>
+  </view>
+  <view class="img-grid">
+    <view class="img-item" wx:for="{{imageUrls}}" wx:key="*this">
+      <image class="img" src="{{item}}" mode="aspectFill" />
+      <view class="img-del" data-index="{{index}}" catchtap="removeImage">×</view>
+    </view>
+    <view class="img-add" bindtap="addImage" wx:if="{{images.length < 6}}">＋</view>
+  </view>
+
+  <button class="btn-primary submit" bindtap="submit" disabled="{{submitting}}">提交问诊</button>
+</view>

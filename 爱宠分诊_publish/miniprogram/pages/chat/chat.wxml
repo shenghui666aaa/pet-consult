@@ -1,0 +1,22 @@
+<view class="chat-page">
+  <view class="consult-header">
+    <view class="pet-name">{{consult.pet.name || '问诊'}}</view>
+    <view class="status">{{consult.statusText}}</view>
+  </view>
+
+  <scroll-view class="msg-list" scroll-y scroll-into-view="{{lastMsgId}}" scroll-with-animation>
+    <view class="msg-row {{item.mine ? 'mine' : 'theirs'}}" wx:for="{{messages}}" wx:key="id" id="msg-{{item.id}}">
+      <view class="bubble {{item.mine ? 'bubble-mine' : 'bubble-theirs'}}">
+        <image wx:if="{{item.type === 'image'}}" class="msg-img" src="{{item.contentUrl}}" mode="widthFix" bindtap="previewImage" data-url="{{item.contentUrl}}" />
+        <text wx:else class="msg-text">{{item.content}}</text>
+      </view>
+    </view>
+    <view wx:if="{{messages.length === 0}}" class="empty-tip">暂无消息，开始对话吧</view>
+  </scroll-view>
+
+  <view class="input-bar">
+    <view class="icon-btn" bindtap="sendImage">🖼️</view>
+    <input class="input" value="{{inputText}}" bindinput="onInput" placeholder="输入消息..." confirm-type="send" bindconfirm="sendText" />
+    <button class="send-btn" size="mini" bindtap="sendText">发送</button>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<view class="page">
+  <view wx:if="{{!loading && list.length === 0}}" class="empty">
+    <view class="empty-emoji">🩺</view>
+    <view>暂无问诊单</view>
+  </view>
+
+  <view class="consult-card" wx:for="{{list}}" wx:key="id">
+    <view class="row">
+      <view class="pet-name">{{item.pet.name || '宠物'}}</view>
+      <view class="status status-{{item.status}}">{{item.statusText}}</view>
+    </view>
+    <view class="symptom">{{item.symptom}}</view>
+    <view class="time">{{item.created_at}}</view>
+    <view class="actions">
+      <button wx:if="{{item.status === 'pending'}}" class="btn-accept" size="mini" data-id="{{item.id}}" bindtap="accept">接诊</button>
+      <button class="btn-chat" size="mini" data-id="{{item.id}}" bindtap="goChat">查看对话</button>
+    </view>
+  </view>
+</view>
